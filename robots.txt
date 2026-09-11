@@ -1,0 +1,17 @@
+# robots.txt for procorners-labs.github.io
+#
+# SCOPE: this file governs the WHOLE origin, including every project page
+# served at /<repo>/. Keep every rule as narrow as the problem it solves.
+
+User-agent: *
+
+# school-app-yemen-web is a BUILD OUTPUT mirror, not a site.
+# The real site is served from a custom domain that fetches these bytes
+# server-side (a fetch, not a crawl - so this file does not affect serving).
+# Indexing this copy creates a duplicate competing with the canonical domain.
+Disallow: /school-app-yemen-web/
+
+# Deliberately NOT disallowed: /schoolz-yemen-legal/
+# It hosts the privacy policy and terms referenced by a published Play Store
+# listing. Blocking it would be a compliance risk, not an SEO gain.
+# Measured 2026-09-11: returns 200, and is a real destination for users.
